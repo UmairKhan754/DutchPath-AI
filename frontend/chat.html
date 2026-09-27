@@ -1,0 +1,606 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="DutchPath AI — Your AI assistant for Netherlands study, university admissions, Studielink and student visa guidance."
+    >
+
+    <meta
+        name="theme-color"
+        content="#050b14"
+    >
+
+    <title>Chat — DutchPath AI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Chat Page Styles -->
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         PAGE BACKGROUND
+         ========================================================= -->
+
+    <div class="page-background" aria-hidden="true">
+        <div class="background-glow background-glow-one"></div>
+        <div class="background-glow background-glow-two"></div>
+        <div class="background-grid"></div>
+    </div>
+
+
+    <!-- =========================================================
+         CHAT APPLICATION
+         ========================================================= -->
+
+    <main class="chat-app">
+
+        <!-- =====================================================
+             TOP NAVIGATION
+             ===================================================== -->
+
+        <header class="chat-header">
+
+            <div class="header-left">
+
+                <!-- Brand -->
+                <a href="index.html" class="chat-brand">
+
+                    <span class="brand-mark" aria-hidden="true">
+                        <span class="brand-mark-inner"></span>
+                    </span>
+
+                    <span class="brand-text">
+                        <strong>DutchPath</strong>
+                        <span>AI</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="header-center">
+
+                <div class="conversation-title">
+                    <span class="conversation-dot"></span>
+                    <span>New conversation</span>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="ai-status">
+                    <span class="status-dot"></span>
+                    <span>AI Online</span>
+                </div>
+
+                <a href="index.html" class="home-button">
+                    <span class="home-icon" aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M3 10.8L12 3L21 10.8V20C21 20.55 20.55 21 20 21H4C3.45 21 3 20.55 3 20V10.8Z"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M9 21V14H15V21"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </span>
+
+                    <span>Home</span>
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             CHAT CONTENT
+             ===================================================== -->
+
+        <section class="chat-content">
+
+            <!-- =================================================
+                 WELCOME STATE
+                 ================================================= -->
+
+            <div class="welcome-state" id="welcomeState">
+
+                <!-- AI Visual -->
+                <div class="ai-avatar-wrapper">
+
+                    <div class="ai-avatar-ring ring-one"></div>
+                    <div class="ai-avatar-ring ring-two"></div>
+
+                    <div class="ai-avatar">
+
+                        <div class="ai-avatar-core">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Welcome Text -->
+
+                <div class="welcome-copy">
+
+                    <div class="welcome-eyebrow">
+                        <span class="eyebrow-line"></span>
+                        DutchPath AI
+                        <span class="eyebrow-line"></span>
+                    </div>
+
+                    <h1>
+                        How can I help you
+                        <span>navigate the Netherlands?</span>
+                    </h1>
+
+                    <p>
+                        Ask me anything about studying in the Netherlands,
+                        university applications, Studielink, admission
+                        requirements, finances, or the student visa process.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     SUGGESTIONS
+                     ================================================= -->
+
+                <div class="suggestions">
+
+                    <button
+                        type="button"
+                        class="suggestion-card"
+                        data-question="What are the general admission requirements for studying in the Netherlands?"
+                    >
+
+                        <span class="suggestion-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M5 4H19C20.1 4 21 4.9 21 6V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V6C3 4.9 3.9 4 5 4Z"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                />
+                                <path
+                                    d="M7 8H17M7 12H17M7 16H13"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="suggestion-content">
+                            <strong>Admission requirements</strong>
+                            <small>What do I need to apply?</small>
+                        </span>
+
+                        <span class="suggestion-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-card"
+                        data-question="Can you explain the Studielink application process step by step?"
+                    >
+
+                        <span class="suggestion-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="8.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                />
+                                <path
+                                    d="M12 7V12L15.5 14"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="suggestion-content">
+                            <strong>Studielink process</strong>
+                            <small>Guide me through the application</small>
+                        </span>
+
+                        <span class="suggestion-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-card"
+                        data-question="How does the Netherlands student visa and MVV process work?"
+                    >
+
+                        <span class="suggestion-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    x="4"
+                                    y="5"
+                                    width="16"
+                                    height="15"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                />
+                                <path
+                                    d="M8 5V3M16 5V3M4 10H20"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M8 14H16M8 17H13"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="suggestion-content">
+                            <strong>MVV & student visa</strong>
+                            <small>Understand the visa process</small>
+                        </span>
+
+                        <span class="suggestion-arrow">→</span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-card"
+                        data-question="What financial proof is required for international students in the Netherlands?"
+                    >
+
+                        <span class="suggestion-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    x="3"
+                                    y="6"
+                                    width="18"
+                                    height="13"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                />
+                                <path
+                                    d="M3 10H21"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                />
+                                <path
+                                    d="M7 15H11"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="suggestion-content">
+                            <strong>Financial proof</strong>
+                            <small>How much money is required?</small>
+                        </span>
+
+                        <span class="suggestion-arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 MESSAGE AREA
+                 ================================================= -->
+
+            <div
+                class="messages-container"
+                id="messagesContainer"
+                aria-live="polite"
+            >
+
+                <!--
+                    Messages will be inserted here by chat.js.
+                -->
+
+            </div>
+
+
+            <!-- =================================================
+                 TYPING INDICATOR
+                 ================================================= -->
+
+            <div
+                class="typing-indicator"
+                id="typingIndicator"
+                aria-hidden="true"
+            >
+
+                <div class="typing-avatar">
+                    <span></span>
+                </div>
+
+                <div class="typing-bubble">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <span class="typing-text">
+                    DutchPath AI is thinking...
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CHAT COMPOSER
+             ===================================================== -->
+
+        <footer class="chat-composer-area">
+
+            <div class="composer-wrapper">
+
+                <!-- Quick topic hints -->
+
+                <div class="composer-hints">
+
+                    <button
+                        type="button"
+                        class="topic-chip"
+                        data-topic="Admissions"
+                    >
+                        Admissions
+                    </button>
+
+                    <button
+                        type="button"
+                        class="topic-chip"
+                        data-topic="Studielink"
+                    >
+                        Studielink
+                    </button>
+
+                    <button
+                        type="button"
+                        class="topic-chip"
+                        data-topic="MVV / Visa"
+                    >
+                        MVV / Visa
+                    </button>
+
+                    <button
+                        type="button"
+                        class="topic-chip"
+                        data-topic="Financial Proof"
+                    >
+                        Financial Proof
+                    </button>
+
+                </div>
+
+
+                <!-- Composer -->
+
+                <div class="composer">
+
+                    <button
+                        type="button"
+                        class="composer-action"
+                        id="attachButton"
+                        aria-label="Attach file"
+                        title="Attachments coming soon"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M21.44 11.05L12.25 20.24C9.9 22.59 6.1 22.59 3.75 20.24C1.4 17.89 1.4 14.09 3.75 11.74L13.29 2.2C15.05 0.44 17.9 0.44 19.66 2.2C21.42 3.96 21.42 6.81 19.66 8.57L10.12 18.11C9.14 19.09 7.56 19.09 6.58 18.11C5.6 17.13 5.6 15.55 6.58 14.57L15.77 5.38"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+
+
+                    <textarea
+                        id="messageInput"
+                        class="message-input"
+                        rows="1"
+                        maxlength="2000"
+                        placeholder="Ask DutchPath AI anything..."
+                        aria-label="Message DutchPath AI"
+                    ></textarea>
+
+
+                    <div class="composer-right">
+
+                        <span
+                            class="character-count"
+                            id="characterCount"
+                        >
+                            0 / 2000
+                        </span>
+
+                        <button
+                            type="button"
+                            class="send-button"
+                            id="sendButton"
+                            aria-label="Send message"
+                            disabled
+                        >
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M21 3L10.5 13.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.9"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M21 3L14.3 21L10.5 13.5L3 9.7L21 3Z"
+                                    stroke="currentColor"
+                                    stroke-width="1.9"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Disclaimer -->
+
+                <div class="composer-disclaimer">
+
+                    <span class="disclaimer-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="9"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                            />
+                            <path
+                                d="M12 10.5V16"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                            />
+                            <circle
+                                cx="12"
+                                cy="7.5"
+                                r="0.8"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </span>
+
+                    <span>
+                        DutchPath AI provides guidance based on its
+                        knowledge base. Always verify important requirements
+                        with the relevant university or official Dutch authorities.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================================================
+         TOAST NOTIFICATION
+         ========================================================= -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+        <span class="toast-icon"></span>
+        <span class="toast-message" id="toastMessage"></span>
+    </div>
+
+
+    <!-- =========================================================
+         CHAT JAVASCRIPT
+         ========================================================= -->
+
+    <script src="js/chat.js"></script>
+
+</body>
+</html>
+```

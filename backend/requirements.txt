@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+google-genai
+chromadb
+sentence-transformers
+transformers
+accelerate
+python-dotenv
+requests
+nest-asyncio

@@ -1,0 +1,31 @@
+# Python virtual environment
+backend/venv/
+venv/
+
+# Secret/API key files
+backend/.env
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files
+.vscode/
+.idea/
+
+# Test/cache files
+.pytest_cache/
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Generated vector database
+backend/chroma_db/
+chroma_db/
